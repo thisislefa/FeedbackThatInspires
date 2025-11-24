@@ -1,0 +1,204 @@
+/* --- CSS Variables and Global Styles --- */
+        :root {
+            --font-primary: 'Poppins', sans-serif;
+            --color-text-dark: #1a1a1a;
+            --color-text-muted: #666666;
+            --color-background-body: #ededed; /* Overall background color */
+            --color-card-main-bg: #ffffff; /* Background for the main card, outside text block */
+            --color-quote-block-bg: #f4f4f4; /* Grey background for quote text */
+            --color-profile-block-bg: #ffffff; /* White background for profile/logo */
+            --color-border-card: #e5e5e5;
+            --card-border-radius: 15px;
+            --inner-block-border-radius: 12px; /* For quote and profile blocks */
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--color-text-dark);
+            background-color: var(--color-background-body);
+            margin: 0;
+            padding: 40px 0 80px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* --- Main Section Layout --- */
+        .feedback-section {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* --- Header Styles --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.05em;
+            margin: 0;
+        }
+
+        /* --- Testimonial Grid --- */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px; /* Spacing between cards */
+        }
+
+        /* --- Individual Testimonial Card Styles --- */
+        .testimonial-card {
+            background-color: var(--color-card-main-bg); /* Main card background */
+            border-radius: var(--card-border-radius);
+            padding: 4px; /* Padding inside the main card, around the inner blocks */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: #bbbbbb;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Quote Block with Grey Background and Rounded Corners */
+        .quote-block {
+            background-color: var(--color-quote-block-bg);
+            border-radius: var(--inner-block-border-radius);
+            padding: 30px;
+            margin-bottom: 15px; /* Space between quote block and profile block */
+            flex-grow: 1; /* Allows it to expand and push profile down */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Quote Icon */
+        .quote-icon {
+            font-family: inherit;
+            font-size: 3rem;
+            line-height: 1;
+            font-weight: 700;
+            color: #ccc; /* Slightly lighter for contrast on grey */
+            margin-bottom: 10px;
+        }
+
+        /* Quote Text */
+        .quote-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-weight: 600;
+            color: var(--color-text-dark);
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        /* Profile & Logo Block with White Background and Rounded Corners */
+        .profile-logo-block {
+            background-color: var(--color-profile-block-bg);
+            border-radius: var(--inner-block-border-radius);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Client Profile */
+        .client-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .client-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .client-info {
+            line-height: 1.2;
+        }
+
+        .client-name {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .client-title {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--color-text-muted);
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Company Logo/Branding */
+        .company-logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #aaaaaa;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+        
+        .logo-svg {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+        
+        /* Specific logo colors for distinction */
+        .logo-digi-minds { color: #888; }
+        .logo-vital-fit { color: #888; }
+        .logo-cozynest { color: #888; }
+        .logo-nexatech { color: #888; }
+
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 3rem;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .section-title {
+                font-size: 2.25rem;
+            }
+            .testimonial-card {
+                padding: 10px; /* Less padding on main card */
+            }
+            .quote-block {
+                padding: 25px;
+            }
+            .quote-icon {
+                font-size: 2.5rem;
+            }
+            .quote-text {
+                font-size: 0.95rem;
+            }
+            .profile-logo-block {
+                padding: 15px 25px;
+                flex-direction: column; /* Stack profile and logo */
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
